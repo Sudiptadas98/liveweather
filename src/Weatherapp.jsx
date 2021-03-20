@@ -22,11 +22,11 @@ function Weatherapp() {
     const [cntry, setCntry] = useState();
     const [weather, setWeather] = useState();
     const [search, setSearch] = useState("Kolkata");
-
+    
     useEffect(() => {
         const fetchApi = async () => {
             try{
-                const aurl = `https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=1f2ebd7a0a6aa3453c26fedcfe124a6b`
+                const aurl = `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=1f2ebd7a0a6aa3453c26fedcfe124a6b`
                 setLoading(false);
                 const resp = await fetch(aurl);
                 const resJson = await resp.json();
